@@ -3,9 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics import r2_score
 
+#Data is sourced from open source data in Google Data
+
 ExistingInfections = 70000000
-
-
 TotalPopulation = 1366400000
 OverFifteenPopRatio = 0.714
 
