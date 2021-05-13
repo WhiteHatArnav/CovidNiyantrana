@@ -25,7 +25,7 @@ DurationOfEfficacy = 240
 
 RateOfVaxing = (int)(JabstoTarget/DurationOfEfficacy)
 
-CurrentRate = 3000000
+CurrentRate = 1500000
 CurrentRateReach = FullyVaccinated + CurrentRate*260
 
 CapCurveVals = [FullyVaccinated, FullVaxTarget*2]
@@ -33,7 +33,9 @@ Indx = [0, 252]
 fit = np.polyfit(Indx,CapCurveVals, 2)
 CurveModel = np.poly1d(fit)
 CurveLine = np.linspace(1, 240, 230)
-slope = round(fit[0])
+
+slope = round(2*fit[0]) #second differential
+
 
 SugLabel ="\nSuggested Constant rate of increase in Daily Vaccination Rate: " + str(slope) +" doses"
 RequiredRateData = np.arange(FullyVaccinated, FullVaxTarget*2, RateOfVaxing)
