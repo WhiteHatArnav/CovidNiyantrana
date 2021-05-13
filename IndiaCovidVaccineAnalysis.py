@@ -36,8 +36,8 @@ CurveLine = np.linspace(1, 240, 230)
 
 slope = round(2*fit[0]) #second differential
 
-
-SugLabel ="\nSuggested Constant rate of increase in Daily Vaccination Rate: " + str(slope) +" doses"
+SugLabelEnd = "\nRequired Ideal Constant Rate of Vaccination = " + str(RateOfVaxing) + " doses per day"
+SugLabel ="\nSuggested Constant rate of increase in Daily Vaccination Rate: " + str(slope) + " doses" + SugLabelEnd 
 RequiredRateData = np.arange(FullyVaccinated, FullVaxTarget*2, RateOfVaxing)
 
 CurrentRateData = np.arange(FullyVaccinated, CurrentRateReach, CurrentRate)
