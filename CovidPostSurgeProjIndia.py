@@ -6,13 +6,13 @@ import datetime
 from datetime import timedelta
 
 #Rounded Data from Ministry of Health And Family Welfare, Government of India and Google Data
-x = [2, 4, 6, 8, 10, 12, 14, 16]
-y = [2800000 ,3100000, 3300000, 3500000, 3650000, 3750000, 3800000, 3710000]
+x = [2, 4, 6, 8, 10, 12, 14, 16, 18,20,22]
+y = [2800000 ,3100000, 3300000, 3500000, 3650000, 3750000, 3800000, 3710000, 3700000,3500000,3350000]
 
 RealModel = np.poly1d(np.polyfit(x,y, 2))
-RealLine = np.linspace(1, 16, 100)
+RealLine = np.linspace(1, 22, 100)
 RealModel2 = np.poly1d(np.polyfit(x,y, 2))
-Realline2 = np.linspace(16, 35, 100)
+Realline2 = np.linspace(22, 35, 100)
 
 k = RealModel.deriv().r
 
@@ -33,6 +33,7 @@ plt.scatter(x, y,color = 'red' )
 #plt.annotate("Expected Peak\n"+ strmax+date, (xmax-3, ymax-350000), color ='blue')
 plt.plot(RealLine, RealModel(RealLine), color = 'red', label = 'Real Data Based Line') 
 plt.plot(Realline2, RealModel2(Realline2), color = 'red', label = 'Real Data Based Line', linestyle='dashed')
+plt.annotate("(18th May, 2021)\n 3.35 Mil. Active cases", (23, 3300000), color = 'blue')
 plt.xlim(1,35)
 plt.title('Expected Trend of Active Covid Cases in India till End of May,', pad = 20)
 plt.xlabel('Days from April 26th, 2021')
